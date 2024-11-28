@@ -9,6 +9,10 @@ app.get('/encode/:textFromUser', (req, res) => {
     return res.send(Vigenere.Cipher(password).crypt(req.params.textFromUser));
 });
 
+app.get('/decode/:textFromUser', (req, res) => {
+    return res.send(Vigenere.Decipher(password).crypt(req.params.textFromUser));
+});
+
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
 });
